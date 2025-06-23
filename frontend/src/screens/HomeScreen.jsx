@@ -43,7 +43,6 @@ dispatch(listProducts(keyword,pageNumber))
         
         }
         
-            
         </div>
     )
 }

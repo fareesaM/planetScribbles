@@ -1,4 +1,4 @@
-main{
+/* main{
   min-height: 80vh;
 }
 
@@ -18,3 +18,35 @@ h2{
   padding: .5rem;
 
 }
+ */
+
+ :root {
+  --color-pink: #D9145C;
+  --color-blue: #6865BF;
+  --color-green: #15BF2F;
+  --color-yellow: #F2E205;
+  --color-gold: #F2B705;
+}
+
+/* 🌈 Brand Navbar Styling */
+.navbar-custom {
+  background-color: var(--color-pink);
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link {
+  color: white !important;
+  font-weight: 500;
+}
+
+.navbar-custom .dropdown-item {
+  color: rgb(61, 34, 34) !important;
+  font-weight: 500;
+}
+
+.navbar-custom .nav-link:hover,
+.navbar-custom .dropdown-item:hover {
+  color: var(--color-yellow) !important;
+}
+
+

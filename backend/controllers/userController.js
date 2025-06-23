@@ -2,25 +2,32 @@ import User from "../models/userModel.js"
 import asyncHandler from "express-async-handler"
 import generateToken from "../utils/generateToken.js"
 
-const authUser=asyncHandler(async(req,res)=>{
-    const {email,password}=req.body 
-  const user= await User.findOne({email:email})  
-  if(user && (await user.matchPassword(password))){
-res.json({
-   _id:user._id,
-   name:user.name,
-   email:user.email,
-   isAdmin:user.isAdmin,
-   token:generateToken(user._id) 
-})
+const authUser = asyncHandler(async (req, res) => {
+  const { email, password } = req.body;
+  console.log(`Trying to login: ${email}`);
 
+  const user = await User.findOne({ email });
+  if (!user) {
+    console.log("❌ User not found");
+  } else {
+    const isMatch = await user.matchPassword(password);
+    console.log("🔐 Password match:", isMatch);
+  }
 
+  if (user && (await user.matchPassword(password))) {
+    res.json({
+      _id: user._id,
+      name: user.name,
+      email: user.email,
+      isAdmin: user.isAdmin,
+      token: generateToken(user._id),
+    });
+  } else {
+    res.status(401);
+    throw new Error("invalid email or password");
   }
-  else{
-res.status(401)
-throw new Error("invalid email or password")
-  }
-})
+});
+
 
 //@desc get user profile
 //@route get /api/users/profile

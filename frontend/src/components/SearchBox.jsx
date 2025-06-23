@@ -18,7 +18,7 @@ history.push(`/search/${keyword}`)
         onChange={(e)=>setKeyword(e.target.value)}
  placeholder="search product..." className="ml-sm-2 mr-sm-2 "         
         ></Form.Control>
-   <Button type="submit" variant="outline-success"
+   <Button type="submit" variant="outline-warning"
    className="p-2" >search</Button>         
         </Form>
     )

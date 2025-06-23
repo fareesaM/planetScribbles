@@ -54,9 +54,6 @@ useEffect(() => {
 }, [dispatch,history,userInfo,successDelete,successCreate,
 createdProduct,pageNumber])
 
-
-
-
     return (
         <>
         <Row className="align items-center">
