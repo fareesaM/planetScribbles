@@ -7,9 +7,8 @@
 PlanetScribbles is a full-stack ecommerce platform built using the MERN stack, tailored for selling books, merchandise, and event tickets. It features user authentication, secure payments, inventory management, admin dashboards, and seamless frontend integration—all hosted live on Render.
 
 This project showcases real-world experience with:
-- React, Redux, Tailwind CSS (frontend)
+- React, Redux (frontend)
 - Node.js, Express, MongoDB, Mongoose (backend)
-- Stripe for payment processing
 - JWT-based authentication & role-based (admin/user) access control
 - RESTful API design with protected routes
 - CI/CD deployment using Render
