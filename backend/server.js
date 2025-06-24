@@ -8,6 +8,7 @@ import productRoutes from "./routes/productRoute.js"
 import userRoutes from "./routes/userRoute.js"
 import orderRoutes from "./routes/orderRoutes.js"
 import uploadRoutes from "./routes/uploadRoutes.js"
+import eventRoutes from './routes/eventRoutes.js';
 
 
 
@@ -22,6 +23,7 @@ app.use("/api/products",productRoutes)
 app.use("/api/users",userRoutes)
 app.use("/api/orders",orderRoutes)
 app.use("/api/upload",uploadRoutes)
+app.use('/api/events', eventRoutes);
 
 console.log(process.env.MONGO_URI)
 app.get("/api/config/paypal",(req,res)=>

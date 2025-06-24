@@ -28,6 +28,12 @@ userSchema.methods.matchPassword=async function(enteredPassword){
 return await bcrypt.compare(enteredPassword,this.password)
 }
 
+// Add to your existing userSchema
+userSchema.virtual('events', {
+  ref: 'Event',
+  localField: '_id',
+  foreignField: 'organizer'
+});
 
 userSchema.pre("save",async function(next){
     if(!this.isModified("password")){
